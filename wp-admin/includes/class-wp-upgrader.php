@@ -1058,14 +1058,11 @@ class Plugin_Upgrader extends WP_Upgrader {
 
 		// Check the folder contains at least 1 valid plugin.
 		$plugins_found = false;
-		$files = glob( $working_directory . '*.php' );
-		if ( $files ) {
-			foreach ( $files as $file ) {
-				$info = get_plugin_data( $file, false, false );
-				if ( ! empty( $info['Name'] ) ) {
-					$plugins_found = true;
-					break;
-				}
+		foreach ( glob( $working_directory . '*.php' ) as $file ) {
+			$info = get_plugin_data($file, false, false);
+			if ( !empty( $info['Name'] ) ) {
+				$plugins_found = true;
+				break;
 			}
 		}
 

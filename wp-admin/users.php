@@ -337,13 +337,7 @@ case 'remove':
 
 <div class="wrap">
 <h1><?php _e( 'Remove Users from Site' ); ?></h1>
-
-<?php if ( 1 == count( $userids ) ) : ?>
-	<p><?php _e( 'You have specified this user for removal:' ); ?></p>
-<?php else : ?>
-	<p><?php _e( 'You have specified these users for removal:' ); ?></p>
-<?php endif; ?>
-
+<p><?php _e('You have specified these users for removal:'); ?></p>
 <ul>
 <?php
 	$go_remove = false;
